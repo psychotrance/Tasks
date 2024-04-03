@@ -1,4 +1,4 @@
-package Lesson10Static_constants.lessons1_8.taskFindPrimeNums;
+package Lesson1_8;
 
 /**
  * Вычислить и записать в массив первые 10 простых чисел.
