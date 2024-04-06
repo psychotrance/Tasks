@@ -13,10 +13,10 @@ package Lesson10Static_constants.Task3;
  */
 
 /**
- * 1.Вынесите поиск простых чисел в отдельный класс.
+ * 1.Вынесите поиск простых чисел в отдельный класс. DONE!!
  * <p>
  * 2.Реализуйте возможность вывода на экран суммы N первых простых чисел, где N
- * – число, введенное пользователем с клавиатуры;
+ * – число, введенное пользователем с клавиатуры;  DONE!
  * <p>
  * 3.Вынесите нужные вам переменные в поля класса. Если необходимо – сделайте
  * их константами уровня класса или объекта. Помните, константа ссылочного типа
@@ -38,7 +38,7 @@ public class Main {
             }
         }
 
-        System.out.println(sum(primeNumbers));
+        System.out.println(sum(primeNumbers, 4));
     }
 
     //    В данном случае, рекурсивно реализован вызов проверки для нового числа в рамках
@@ -71,15 +71,15 @@ public class Main {
     }
 
     //    Логика реализации удобного метода-обертки, по аналогии с предыдущей задачей
-    static int sum(int[] numbers) {
-        return sum(numbers, 0);
+    static int sum(int[] numbers, int endIndex) {
+        return sum(numbers, 0, endIndex);
     }
 
-    static int sum(int[] numbers, int i) {
-        if (i == numbers.length - 1) {
+    static int sum(int[] numbers, int i, int endIndex) {
+        if (i == endIndex) {
             return numbers[i];
         }
 
-        return numbers[i] + sum(numbers, i + 1);
+        return numbers[i] + sum(numbers, i + 1, endIndex);
     }
 }
